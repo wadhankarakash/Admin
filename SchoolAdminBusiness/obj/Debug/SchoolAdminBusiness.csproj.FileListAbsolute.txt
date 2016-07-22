@@ -1,0 +1,7 @@
+C:\SchoolAdmin\SchoolAdminBusiness\bin\Debug\SchoolAdminBusiness.dll
+C:\SchoolAdmin\SchoolAdminBusiness\bin\Debug\SchoolAdminBusiness.pdb
+C:\SchoolAdmin\SchoolAdminBusiness\bin\Debug\CommonServices.dll
+C:\SchoolAdmin\SchoolAdminBusiness\bin\Debug\CommonServices.pdb
+C:\SchoolAdmin\SchoolAdminBusiness\obj\Debug\SchoolAdminBusiness.csprojResolveAssemblyReference.cache
+C:\SchoolAdmin\SchoolAdminBusiness\obj\Debug\SchoolAdminBusiness.dll
+C:\SchoolAdmin\SchoolAdminBusiness\obj\Debug\SchoolAdminBusiness.pdb

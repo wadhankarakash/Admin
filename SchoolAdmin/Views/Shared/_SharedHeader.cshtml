@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+
+</head>
+<body class="w3-container">
+    <div>       
+        <div class="container">
+            <div class="row">
+                <ul class="w3-navbar w3-card-2 w3-light-grey">
+                    <li class="w3-dropdown-hover w3-orange col-md-2" style="color:white;">
+                        @Html.ActionLink("Home", "Index", "Home")
+
+                    </li>
+                    <li class="w3-dropdown-hover w3-orange col-md-2" style="color:white;">
+                        <a href="#">Student</a>
+                        <div class="w3-dropdown-content w3-white w3-card-4">
+                            @Html.ActionLink("Search", "Student", "Student", new { userAction = "SearchStudent" }, null)
+                            @Html.ActionLink("New", "Student", "Student", new { userAction = "NewStudent" }, null)
+                            @Html.ActionLink("View", "Student", "Student", new { userAction = "ViewStudent" }, null)
+                        </div>
+                    </li>
+                    <li class="w3-dropdown-hover w3-orange col-md-2" style="color:white;">
+                        <a href="#">Teacher</a>
+                        <div class="w3-dropdown-content w3-white w3-card-4">
+                            @Html.ActionLink("Search", "Teacher", "Teacher", new { userAction = "SearchTeacher" }, null)
+                            @Html.ActionLink("New", "Teacher", "Teacher", new { userAction = "NewTeacher" }, null)
+                            @Html.ActionLink("Assign", "Teacher", "Teacher", new { userAction = "AssignTeacher" }, null)
+
+                        </div>
+                    </li>
+                    <li class="w3-dropdown-hover w3-orange col-md-2" style="color:white;">
+                        <a href="#">Alerts</a>
+                        <div class="w3-dropdown-content w3-white w3-card-4">
+                            @Html.ActionLink("New Alert", "Alerts", "Alerts", new { userAction = "NewAlert" }, null)
+                            @Html.ActionLink("View Alert", "Alerts", "Alerts", new { userAction = "ViewAlert" }, null)
+                            @Html.ActionLink("Search Alert", "Alerts", "Alerts", new { userAction = "SearchAlert" }, null)
+                        </div>
+                    </li>
+                    <li class="w3-dropdown-hover w3-orange col-md-2" style="color:white;">
+                        <a href="#">Attendance</a>
+                        <div class="w3-dropdown-content w3-white w3-card-4">
+                            @Html.ActionLink("View Attendance", "Attendance", "Attendance", new { userAction = "ViewAttendance" }, null)
+                        </div>
+                    </li>
+                    <li class="w3-dropdown-hover w3-orange col-md-2" style="color:white;">
+                        <a href="#">Configuration</a>
+                        <div class="w3-dropdown-content w3-white w3-card-4">
+                            @Html.ActionLink("Add Class", "Configuration", "Configuration", new { userAction = "AddClass" }, null)
+                            @Html.ActionLink("Add Division", "Configuration", "Configuration", new { userAction = "AddDivision" }, null)
+                            @Html.ActionLink("Add Subjects", "Configuration", "Configuration", new { userAction = "AddSubjects" }, null)
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+       
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
+
+

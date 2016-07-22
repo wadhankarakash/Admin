@@ -1,0 +1,115 @@
+﻿
+@{
+    ViewBag.Title = "Configuration";
+}
+<div class="row" style="width:100%;height:40px;text-align:center;">
+    Add Class
+</div>
+<div class="row">
+    <div class="col-md-1">
+        <label for="txtClass">Class :</label>
+    </div>
+    <div class="col-md-2">
+
+        <input type="text" class="form-control" name="txtClass" />
+
+    </div>
+    <div class="col-md-1">
+        <button type="submit" class="btn btn-primary"  id="btnSave">Save</button>     
+    </div>
+    <div class="col-md-1">
+        <button type="submit" class="btn btn-primary"  id="btnCancel">Cancel</button>
+    </div>
+    <div class="col-md-5"></div>
+</div>
+
+<div class="row" >
+    <div class="col-md-6">
+        <div ng-controller="MyCtrl" style="padding-top:30px;">
+            <div class="gridStyle" ng-grid="gridOptions"></div>
+        </div>
+    </div>
+    <div class="col-md-6">
+    </div>
+ </div>
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/ng-grid/2.0.11/ng-grid.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular.min.js"></script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ng-grid/2.0.11/ng-grid.min.js"></script>
+
+<link href="~/Content/Site.css" rel="stylesheet" />
+<script>
+    var searchedData;
+    var app = angular.module('myApp', ['ngGrid']);
+    app.controller('MyCtrl', function ($scope) {
+
+        //Define grid
+        $scope.gridOptions = {
+
+            data: 'myData',
+            columnDefs: [{ field: 'Class', displayName: 'Class' }]
+        };
+
+
+    $(document).ready(function () {
+
+        var name;
+        var RegNumber;
+        var ddlClass;
+        var ddlDiv;
+
+        $("#btnClear").click(
+            function () {
+                debugger;
+                $("#txtName").val('');
+                $("#txtRegNumber").val('');
+                $("#ddlClass").val('1');
+                $("#ddlDiv").val('A');
+            });
+
+        $("#btnSubmit").click(
+           function () {
+               debugger;
+               name = $("#txtName").val();
+               RegNumber = $("#txtRegNumber").val();
+               ddlClass = $("#ddlClass").val();
+               ddlDiv = $("#ddlDiv").val();
+
+               var url = '@Url.Action("Search", "Teacher")' + '?Name=' + name + '&Class=' + ddlClass + '&Div=' + ddlDiv + '&RegNumber=' + RegNumber;
+
+               $.ajax({
+                   url: url,
+                   contentType: "application/json; charset=utf-8",
+                   type: 'POST',
+                   success: function (data) {
+                       /*New code */
+                       debugger;
+
+                       $scope.myData = JSON.parse(data);
+                       if (!$scope.$$phase) {
+                           $scope.$apply();
+                       }
+
+                       //$scope.myData = data;
+                   }
+               });
+
+               //$scope.$apply();
+
+              }
+
+
+
+               );
+
+    });
+
+
+    });
+
+
+
+</script>

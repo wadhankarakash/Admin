@@ -1,0 +1,4 @@
+C:\SchoolAdmin\SchoolAdmin\CommonServices\bin\Debug\CommonServices.dll
+C:\SchoolAdmin\SchoolAdmin\CommonServices\bin\Debug\CommonServices.pdb
+C:\SchoolAdmin\SchoolAdmin\CommonServices\obj\Debug\CommonServices.dll
+C:\SchoolAdmin\SchoolAdmin\CommonServices\obj\Debug\CommonServices.pdb
